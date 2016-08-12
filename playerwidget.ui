@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlayerWidget</class>
+ <widget class="QWidget" name="PlayerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe Print</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>PlayerWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.QPushButton:hover,#moreButton:hover {
+	margin-top:1px;
+}
+#PlayerWidget .QFrame{
+	background-color:rgba(135,206,235,80);
+}
+QToolBox::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2:1,
+                     stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                     stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border-radius: 5px;
+    color: darkgray;
+	font: 10pt &quot;华文中宋&quot;;
+}
+QToolBox::tab:selected { /* italicize selected tabs */
+    font: 1.3em;
+    color: black;
+}
+QSlider::groove:horizontal{
+	border:0px;
+	height:4px;
+}
+QSlider::sub-page:horizontal{
+	background:white;
+}
+QSlider::add-page:horizontal{
+	background:lightgray;
+}
+QSlider::handle:horizontal{
+	background:white;
+	width:10px;
+	border-radius:5px;
+	margin:-3px 0px -3px 0px;
+}
+.RollLabel{
+	font: 9pt &quot;仿宋&quot;;
+}
+#lrcFrame .RollLabel {
+	font: 14pt &quot;微软雅黑&quot; ;
+	color: gray;
+}
+QTableWidgetItem{
+	padding-left:5px
+}
+</string>
+  </property>
+  <widget class="QFrame" name="leftFrame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>280</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QSlider" name="volumeSlider">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>35</y>
+      <width>20</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="finishTime">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">opacity:0;</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="timeSlider">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>130</y>
+      <width>180</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="totalTime">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>130</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>00:04</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coverImage">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>20</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(&quot;:/image/example.jpg&quot;);
+border-radius:20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="firstTrackButton">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>158</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/first_track_32px_1180262_easyicon.net.png);
+border-radius:16px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rewindButton">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>158</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/rewind_32px_1180268_easyicon.net.png);
+border-radius:16px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lastTrackButton">
+    <property name="geometry">
+     <rect>
+      <x>233</x>
+      <y>158</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/last_track_32px_1180264_easyicon.net.png);
+border-radius:16px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="forwardButton">
+    <property name="geometry">
+     <rect>
+      <x>188</x>
+      <y>158</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/forward_32px_1180263_easyicon.net.png);
+border-radius:16px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="playPauseButton">
+    <property name="geometry">
+     <rect>
+      <x>116</x>
+      <y>150</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/play_48px_1180266_easyicon.net.png);
+border-radius:24px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="volumeUpButton">
+    <property name="geometry">
+     <rect>
+      <x>235</x>
+      <y>9</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/Volume_Up_24px_1178996_easyicon.net.png);
+border-radius:12px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="volumeDownButton">
+    <property name="geometry">
+     <rect>
+      <x>235</x>
+      <y>97</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:url(:/image/icon/Volume_Down_24px_1178995_easyicon.net.png);
+border-radius:12px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QToolBox" name="listCategory">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>198</y>
+      <width>280</width>
+      <height>382</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="tabSpacing">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="localPage">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>280</width>
+       <height>342</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Page 1</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="collectPage">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>280</width>
+       <height>342</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Page 2</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="orderButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>581</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/selected_repeat_16px_1175852_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="singleButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>581</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/repeat_one_16px_1175852_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="randomButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>581</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/random_16px_1175848_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="topFrame">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>0</y>
+     <width>620</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="exitButton">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>7</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/cross_15.977464788732px_1153732_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="chatButton">
+    <property name="geometry">
+     <rect>
+      <x>575</x>
+      <y>7</y>
+      <width>23</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/CHAT_19.781818181818px_1162325_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="minimizeButton">
+    <property name="geometry">
+     <rect>
+      <x>515</x>
+      <y>7</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/minimize_16px_1148222_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="moreButton">
+    <property name="geometry">
+     <rect>
+      <x>555</x>
+      <y>7</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/menu_17.481481481481px_1153767_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>535</x>
+      <y>7</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(255,255,255,0) url(:/image/icon/theme_18.599613152805px_1143764_easyicon.net.png) no-repeat;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nickName">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>0</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="bottomFrame">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>560</y>
+     <width>620</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lsLabel">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>背景变换</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bsLabel">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>10</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>KTV模式</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="lrcFrame">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>30</y>
+     <width>620</width>
+     <height>530</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(2,2,2,0)</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

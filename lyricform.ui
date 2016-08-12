@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LyricForm</class>
+ <widget class="QWidget" name="LyricForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>140</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">LyricLabel {
+	font: 30pt &quot;微软雅黑&quot;;
+	color:gray;
+	
+}
+
+.QPushButton:!hover{
+	background: rgba(0,0,0,0);
+}
+
+.QPushButton:hover{
+	background: rgba(3,3,3,0) url(:/image/icon/cross_15.977464788732px_1153732_easyicon.net.png) no-repeat
+}</string>
+  </property>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>0</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegDialog</class>
+ <widget class="QDialog" name="RegDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>369</width>
+    <height>328</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel,QPushButton{
+	font: 10pt &quot;华文中宋&quot;;
+	background:
+}
+
+QDialog{
+	background-color:rgba(135,206,235,80);
+}</string>
+  </property>
+  <widget class="QLineEdit" name="namelineEdit">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>62</y>
+     <width>108</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="newnamelineEdit">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>113</y>
+     <width>108</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="newpwdlineEdit">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>164</y>
+     <width>108</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>58</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>请输入昵称：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>109</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>请输入用户名：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>161</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>请输入密码：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="regokButton">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>265</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:5px;
+background:rgba(231,123,34,90)</string>
+   </property>
+   <property name="text">
+    <string>注册</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="regnotokButton">
+   <property name="geometry">
+    <rect>
+     <x>245</x>
+     <y>265</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:5px;
+background:rgba(231,123,34,90)</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>212</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>请确认密码：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="renewpwdlineEdit">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>215</y>
+     <width>108</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="regExitButton">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>10</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:5px;
+background:url(:/image/icon/cross_15.977464788732px_1153732_easyicon.net.png) no-repeat</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="NameLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>65</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,0,0)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="userLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>115</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,0,0)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
